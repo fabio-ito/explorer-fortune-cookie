@@ -1,0 +1,183 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --box-shadow-main: 0px 20px 50px 0px hsla(0, 0%, 0%, 0.8);
+  --box-shadow-fortune: 2px 2px 2px 0px hsla(0, 0%, 33%, 0.5);
+
+  --body-bgd: linear-gradient(
+    45deg,
+    hsl(254, 94%, 20%) 0%,
+    hsl(284, 100%, 50%) 100%
+  );
+  --main-bgd: hsl(0, 0%, 100%);
+  --fortune-bgd: hsl(198, 32%, 92%);
+  --btn-bgd: hsl(35, 100%, 50%);
+
+  --body-color: hsl(238, 27%, 28%);
+  --btn-color: hsl(0, 0%, 100%);
+
+  --ff-fortune: "Dancing Script", cursive;
+  --ff-h1: "Montserrat", sans-serif;
+  --ff-p: "DM Sans", sans-serif;
+}
+
+body {
+  background: var(--body-bgd);
+  background-size: 200% 200%;
+
+  color: var(--body-color);
+  font-size: 1.6rem;
+
+  display: grid;
+  place-items: center;
+
+  height: 100vh;
+  text-align: center;
+
+  animation: animateGradient 10s ease infinite;
+}
+
+main {
+  background: var(--main-bgd);
+  width: min(42.8rem, 90%);
+  height: max-content;
+
+  padding: 4.8rem 6.4rem 6.4rem;
+
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow-1);
+}
+
+.hidden {
+  display: none;
+}
+
+h1,
+h2 {
+  font-family: var(--ff-h1);
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+/* screen1 */
+
+p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+p,
+button {
+  font-family: var(--ff-p);
+}
+
+h3,
+p {
+  margin-block: 1.6rem;
+}
+
+#cookie {
+  cursor: pointer;
+}
+
+#cookie:hover {
+  animation: cookieShake 0.5s infinite;
+}
+
+/* screen 2 */
+
+h3 {
+  font-family: var(--ff-fortune);
+  font-size: 2.4rem;
+  font-weight: 400;
+
+  background: var(--fortune-bgd);
+  box-shadow: var(--box-shadow-fortune);
+
+  padding: 1rem;
+
+  height: max-content;
+}
+
+button {
+  background: var(--btn-bgd);
+  font-weight: 700;
+  color: var(--btn-color);
+
+  padding: 1.6rem;
+
+  border: none;
+  border-radius: 0.4rem;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease-out;
+}
+
+button:hover {
+  background: #d47c00;
+}
+
+@keyframes cookieShake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes revealFortune {
+  0% {
+    transform: translateY(170px) scale(0.1);
+  }
+
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes animateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
